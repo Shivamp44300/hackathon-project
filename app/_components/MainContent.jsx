@@ -43,7 +43,7 @@ function MainContent() {
   console.log(userData);
   return (
     <div className="col-span-5 bg-fuchsia-50">
-      <MainContentHeader tabname="dashboard" userData={userData} />
+      <MainContentHeader tabname="dashboard"  />
       <div className="px-8">
         <h5 className="text-xl text-gray-900">
           <span className="text-3xl">

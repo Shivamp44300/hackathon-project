@@ -1,9 +1,40 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { FaArrowLeftLong, FaBell } from "react-icons/fa6";
+import Spinner from "./Spinner";
+import { useEffect, useState } from "react";
+import { getUser } from "../_utils/API";
 
-function MainContentHeader({ tabname, userData }) {
-  console.log(userData);
+function MainContentHeader({ tabname}) {
+ const { data: session, status } = useSession();
+ const [userData, setUserData] = useState(null);
+
+ // Ensure session data is loaded and valid
+ const email = session?.user?.email;
+ const name = session?.user?.name;
+
+ useEffect(() => {
+   if (status === "authenticated" && email) {
+     const fetchUserData = async () => {
+       try {
+         const res = await getUser(email);
+         console.log(res,'this res')
+         setUserData(res);
+         console.log(res, "this from mainContent");
+       } catch (error) {
+         console.error("Error fetching user data:", error);
+       }
+     };
+
+     fetchUserData();
+   }
+ }, [status, email]); // Added email to the dependencies list
+
+ // Loading state when the session is being fetched
+ if (status === "loading") {
+   return <Spinner />;
+ }
+
   return (
     <div className="flex justify-between items-center px-6 py-6">
       <div>

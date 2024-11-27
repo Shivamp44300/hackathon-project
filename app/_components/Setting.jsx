@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import MainContentHeader from "@/app/_components/MainContentHeader";
 import Spinner from "@/app/_components/Spinner";
 import { CldUploadButton } from "next-cloudinary"; // Cloudinary button
-import { updateUser } from "../_utils/API";
+import { updateUser } from "../_utils/API"; // Ensure this points to your API utility function
 
 function Setting() {
   const { data: session, status } = useSession();
@@ -54,6 +54,9 @@ function Setting() {
       const updatedData = {
         ...data,
         profile_photo: formData.profile_photo, // Ensure profile photo is included in the update
+        phone: formData.phone, // Include phone number
+        emergency_contact_name: formData.emergency_contact_name, // Include emergency contact name
+        emergency_contact_phone: formData.emergency_contact_phone, // Include emergency contact phone
       };
 
       await updateUser(email, updatedData);
