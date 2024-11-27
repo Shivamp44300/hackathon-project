@@ -2,26 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.react-day-picker {
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.react-day-picker-day {
+  font-size: 14px;
+  padding: 8px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.react-day-picker-day.selected {
+  background-color: #3b82f6;
+  color: white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.react-day-picker-day:hover {
+  background-color: #e0e7ff;
 }
+
