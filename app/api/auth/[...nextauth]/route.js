@@ -49,7 +49,7 @@ const authOptions = {
     async redirect({ url, baseUrl }) {
       // Check if the URL is the default, and redirect to the dashboard
       if (url === baseUrl || url === "/") {
-        return `${baseUrl}/dashboard`; // Change to the desired dashboard path
+        return `${baseUrl}/userdashboard`; // Change to the desired dashboard path
       }
       return url;
     },
