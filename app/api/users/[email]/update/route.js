@@ -22,6 +22,12 @@ export const PATCH = async (req, { params }) => {
     if (updateData.phone?.trim()) {
       updateFields.phone = updateData.phone.trim();
     }
+    if (updateData.room_number?.trim()) {
+      updateFields.room_number = updateData.room_number.trim();
+    }
+    if (updateData.floor_number?.trim()) {
+      updateFields.floor_number = updateData.floor_number.trim();
+    }
 
     if (updateData.profile_photo?.trim()) {
       updateFields.profile_photo = updateData.profile_photo.trim();

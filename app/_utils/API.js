@@ -68,6 +68,7 @@ export const createUser = async (userData) => {
 // Update a user by email
 export const updateUser = async (email, updatedData) => {
   try {
+    // Prepare the data for the API call
     const dataUpdate = {
       phone: updatedData.phone,
       room_number: updatedData.room_number,
@@ -79,6 +80,7 @@ export const updateUser = async (email, updatedData) => {
       },
     };
 
+    // Send a PATCH request to update the user
     const res = await fetch(`/api/users/${email}/update`, {
       method: "PATCH",
       headers: {
@@ -87,16 +89,20 @@ export const updateUser = async (email, updatedData) => {
       body: JSON.stringify(dataUpdate),
     });
 
+    // Check for successful response
     if (!res.ok) {
-      const errorText = await res.text(); // Capture detailed error text
+      const errorText = await res.text(); // Capture detailed error text from the response
       throw new Error(`HTTP error! Status: ${res.status}. Error: ${errorText}`);
     }
 
+    // If the request is successful, parse and return the updated user data
     const data = await res.json();
     console.log("Updated user:", data);
     return data; // Return the updated user data
   } catch (error) {
+    // Log any errors and rethrow them
     console.error("Error updating user:", error);
+    throw new Error(error.message); // Re-throw to allow further error handling in UI if needed
   }
 };
 

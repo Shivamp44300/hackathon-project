@@ -59,11 +59,14 @@ function Setting() {
         ...data,
         profile_photo: formData.profile_photo, // Ensure profile photo is included in the update
         phone: formData.phone,
-        room_number: formData.room_number,
-        floor_number: formData.floor_number,
+        room_number: formData.room_number, // Ensure this is included in the payload
+        floor_number: formData.floor_number, // Ensure this is included in the payload
         emergency_contact_name: formData.emergency_contact_name,
         emergency_contact_phone: formData.emergency_contact_phone,
       };
+
+      // Debugging: Log the form data before submitting
+      console.log("Submitting updated data:", updatedData);
 
       await updateUser(email, updatedData);
       alert("Profile updated successfully!");
