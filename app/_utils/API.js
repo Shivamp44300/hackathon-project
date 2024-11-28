@@ -70,6 +70,8 @@ export const updateUser = async (email, updatedData) => {
   try {
     const dataUpdate = {
       phone: updatedData.phone,
+      room_number: updatedData.room_number,
+      floor_number: updatedData.floor_number,
       profile_photo: updatedData.profile_photo,
       emergency_contact: {
         emergency_contact_name: updatedData.emergency_contact_name,

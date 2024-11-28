@@ -57,23 +57,18 @@ const userSchema = new mongoose.Schema({
     {
       entry_time: {
         type: Date,
-        
       },
       exit_time: {
         type: Date,
-        
       },
       location: {
         type: [Number],
-        
       },
       place: {
         type: String,
-        
       },
       reason: {
         type: String,
-        
       },
       status_log: {
         type: String,
@@ -102,6 +97,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ["Active", "Inactive", "Suspended"],
     default: "Active",
+  },
+  room_number: {
+    type: String,
+    default: null,
+  },
+  floor_number: {
+    type: String,
+    default: null,
   },
 });
 

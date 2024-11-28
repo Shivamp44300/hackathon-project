@@ -16,6 +16,8 @@ function Setting() {
     profile_photo: "",
     emergency_contact_name: "",
     emergency_contact_phone: "",
+    room_number: "",
+    floor_number: "",
   });
   const [imagePreview, setImagePreview] = useState(null);
 
@@ -32,6 +34,8 @@ function Setting() {
           setUserData(userData);
           setFormData({
             phone: userData.phone || "",
+            room_number: userData.room_number || "",
+            floor_number: userData.floor_number || "",
             profile_photo: userData.profile_photo || "",
             emergency_contact_name:
               userData.emergency_contact?.emergency_contact_name || "",
@@ -54,9 +58,11 @@ function Setting() {
       const updatedData = {
         ...data,
         profile_photo: formData.profile_photo, // Ensure profile photo is included in the update
-        phone: formData.phone, // Include phone number
-        emergency_contact_name: formData.emergency_contact_name, // Include emergency contact name
-        emergency_contact_phone: formData.emergency_contact_phone, // Include emergency contact phone
+        phone: formData.phone,
+        room_number: formData.room_number,
+        floor_number: formData.floor_number,
+        emergency_contact_name: formData.emergency_contact_name,
+        emergency_contact_phone: formData.emergency_contact_phone,
       };
 
       await updateUser(email, updatedData);
@@ -159,6 +165,34 @@ function Setting() {
                 }
                 className="w-full p-3 border border-gray-300 rounded-lg"
                 placeholder="Enter your phone number"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label className="text-gray-700">Room No</label>
+              <input
+                type="text"
+                name="room_number"
+                value={formData.room_number}
+                onChange={(e) =>
+                  setFormData({ ...formData, room_number: e.target.value })
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg"
+                placeholder="Enter your room number"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label className="text-gray-700">Floor No</label>
+              <input
+                type="text"
+                name="floor_number"
+                value={formData.floor_number}
+                onChange={(e) =>
+                  setFormData({ ...formData, floor_number: e.target.value })
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg"
+                placeholder="Enter your floor number"
               />
             </div>
 
