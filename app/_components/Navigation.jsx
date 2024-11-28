@@ -33,7 +33,7 @@ function Navigation() {
             </Link>
           </li>
           <li>
-            <Link href="#" className="hover:text-fuchsia-900">
+            <Link href="#contact" className="hover:text-fuchsia-900">
               Contact
             </Link>
           </li>
