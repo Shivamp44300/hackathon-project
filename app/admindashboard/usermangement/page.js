@@ -120,7 +120,10 @@ const UserManagement = () => {
         <thead>
           <tr>
             <th className="px-4 py-2 border text-left text-sm font-medium text-gray-700">
-              User ID
+              Room Number
+            </th>
+            <th className="px-4 py-2 border text-left text-sm font-medium text-gray-700">
+              Floor Number
             </th>
             <th className="px-4 py-2 border text-left text-sm font-medium text-gray-700">
               Profile Pic
@@ -143,7 +146,10 @@ const UserManagement = () => {
           {users?.map((user) => (
             <tr key={user?._id} className="hover:bg-fuchsia-100">
               <td className="px-4 py-2 border text-sm text-gray-700">
-                {user?._id}
+                {user?.room_number}
+              </td>
+              <td className="px-4 py-2 border text-sm text-gray-700">
+                {user?.floor_number}
               </td>
               <td className="px-4 py-2 border text-sm text-gray-700">
                 <img

@@ -19,11 +19,10 @@ function Feature() {
               className="mx-auto mb-4 w-32 h-32 object-contain transition-transform duration-300 hover:scale-110"
             />
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
-              Secure Transactions
+             User-Friendly Dashboard
             </h3>
             <p className="text-gray-600">
-              Experience top-notch security with end-to-end encrypted data
-              transfer, ensuring your operations are always safe and reliable.
+             Navigate and control all your integrations with an intuitive dashboard designed for simplicity and ease of use.
             </p>
           </article>
 

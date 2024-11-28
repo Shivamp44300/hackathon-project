@@ -83,7 +83,7 @@ const DocsPage = () => {
             <div className="bg-gray-100 p-4 my-4 rounded-md overflow-x-auto shadow-lg">
               <pre>
                 <code className="text-gray-900">
-                  {`GET /api/v1/transactions   // Retrieve a list of transactions\nPOST /api/v1/integrate     // Submit data for integration`}
+                  {`GET /api/users  // Retrieve a list of users\nPOST /api/users/create     // Submit data for integration`}
                 </code>
               </pre>
             </div>
