@@ -5,6 +5,7 @@ import Feature from "./_components/Feature";
 import Footer from "./_components/Footer";
 import Documentation from "./_components/Documentation";
 import Team from "./_components/Team";
+import { ContactForm } from "./_components/ContactForm";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Feature/>
       <Team/>
       <Documentation/>
+      <ContactForm/>
       <Footer/>
     </>
   );
